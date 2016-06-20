@@ -61,7 +61,7 @@ PhpMetrics can parse PHP code from **PHP 5.3 to PHP 7.x**.
 
 > I want to parse PHP7 code but I use PHP 5.x
 
-You can parse PHP7 code, but your interpreter will detect syntax errors in your code. To prevent this, please 
+You can parse PHP7 code, but your interpreter will detect syntax errors in your code. To prevent this, please
 use the `--ignore-errors` option.
 
 ## Extensions / Plugins
@@ -139,7 +139,7 @@ You can also export results as violations (MessDetector report), in XML format w
 
 A complete example command line:
 
-`phpmetrics --report-html=report.html --report-xml=report.xml --report-cli=true --violations-xml=violations.xml 
+`phpmetrics --report-html=report.html --report-xml=report.xml --report-cli=true --violations-xml=violations.xml
 --report-csv=report.csv --report-json=report.json --chart-bubbles=chart.svg --level=3 --extensions=php|inc --excluded-dirs="cache|logs"
 --symlinks=true --without-oop=true --failure-condition="average.maintainabilityIndex < 50 or sum.loc > 10000" --template-title="My Report" /path/to/source`
 
@@ -190,9 +190,17 @@ In order to run unit tests, please install the dev dependencies:
     curl -sS https://getcomposer.org/installer | php
     php composer.phar install
 
+Install ```graphviz``` to some tests run (example for ubuntu):
+
+    sudo apt-get install graphviz
+
 Then, in order to run the test suite:
 
     ./vendor/bin/phpunit
+
+Install [nodejs](https://nodejs.org/en/download/package-manager/), in order to execute semver on build:
+
+    sudo npm install -g semver
 
 Finally, build the phar:
 
